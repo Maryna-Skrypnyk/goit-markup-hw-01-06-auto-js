@@ -270,6 +270,18 @@
 //   // Пиши код выше этой строки
 //   return propCount;
 // }
+
+// function countProps(object) {
+//   let propCount = 0;
+//   // Пиши код ниже этой строки
+// for (key in object) {
+//   if(object.hasOwnProperty(key)) {
+//     propCount += 1;
+//   }
+// }
+//   // Пиши код выше этой строки
+//   return propCount;
+// }
 // console.log(countProps({}));
 // console.log(countProps({ name: 'Mango', age: 2 }));
 // console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
@@ -289,11 +301,12 @@
 //     values.push(apartment[key]);
 // }
 
-// console.log(keys);
-// console.log(values);
+// console.log(keys); // ["descr", "rating", "price"]
+// console.log(values); // ["Просторная квартира в центре", 4, 2153]
 
 
 // Модуль 3. Задача№14.
+// 1 спосіб
 // function countProps(object) {
 //   // Пиши код ниже этой строки
 //   let propCount = 0;
@@ -307,9 +320,24 @@
 //   // Пиши код выше этой строки
 // }
 
-// console.log(countProps({}));
-// console.log(countProps({ name: 'Mango', age: 2 }));
-// console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
+// console.log(countProps({})); // 0
+// console.log(countProps({ name: 'Mango', age: 2 })); // 2
+// console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // 3
+
+// 2 спосіб
+// function countProps(object) {
+//   // Пиши код ниже этой строки
+//   let propCount = 0;
+//   const keys = Object.keys(object);
+//   propCount = keys.length;
+//   return propCount;
+//   // Пиши код выше этой строки
+// }
+
+// console.log(countProps({})); // 0
+// console.log(countProps({ name: 'Mango', age: 2 })); // 2
+// console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // 3
+
 
 // Модуль 3. Задача№15.
 // const apartment = {
@@ -386,11 +414,6 @@
 // console.log(getProductPrice('Сканер'));
 // console.log(getProductPrice('Дроид'));
 // console.log(getProductPrice('Двигатель'));
-
-
-
-
-
 
 
 
@@ -579,6 +602,11 @@
 // console.log(calculateTotalPrice('Сканер'));
 
 // Модуль 3. Задача№21.
+// Пришел трёхдневный прогноз максимальных температур и мы считаем 
+// среднюю температуру за три дня(meanTemperature).
+// Замени объявления переменных yesterday, today и tomorrow одной операцией 
+// деструктуризации свойств объекта highTemperatures.
+
 // const highTemperatures = {
 //   yesterday: 28,
 //   today: 26,
@@ -591,7 +619,7 @@
 // // Пиши код выше этой строки
 // const meanTemperature = (yesterday + today + tomorrow) / 3;
 
-// console.log(meanTemperature);
+// console.log(meanTemperature); // 29
 
 // Модуль 3. Задача№22.
 // const highTemperatures = {
@@ -659,7 +687,8 @@
 // };
 // // Пиши код ниже этой строки
 
-// const { today: { high: highToday, low: lowToday, icon: todayIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' }, tomorrow: { low: lowTomorrow, high: highTomorrow, icon: tomorrowIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' } } = forecast;
+// const { today: { high: highToday, low: lowToday, icon: todayIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' }, 
+// tomorrow: { low: lowTomorrow, high: highTomorrow, icon: tomorrowIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' } } = forecast;
 
 // console.log(highToday, lowToday, todayIcon);
 // console.log(highTomorrow, lowTomorrow, tomorrowIcon);
@@ -782,6 +811,8 @@
 //   return matches;
 // }
 
+// Пиши код ниже этой строки
+
 // console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
 // console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
 // console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
@@ -830,6 +861,10 @@
 // console.log(bookShelf.updateBook('Последнее королевство', 'Дюна'));
 
 // Модуль 3. Задача№36.
+// К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу 
+// для ведения инвентаря - добавления, удаления, поиска и обновления зелий.
+// Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив.
+
 // const atTheOldToad = {
 //   // Пиши код ниже этой строки
 //   potions: [],
@@ -839,6 +874,9 @@
 
 
 // Модуль 3. Задача№37.
+// Добавь объекту atTheOldToad метод getPotions(), 
+// который просто возвращает значение свойства potions.
+
 // const atTheOldToad = {
 //   // Пиши код ниже этой строки
 //   potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
@@ -851,6 +889,9 @@
 // console.log(atTheOldToad.getPotions());
 
 // Модуль 3. Задача№38.
+// Дополни метод addPotion(potionName) так, чтобы он добавлял 
+// зелье potionName в конец массива зелий в свойстве potions.
+
 // const atTheOldToad = {
 //   potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
 //   addPotion(potionName) {
@@ -865,6 +906,9 @@
 // console.log(atTheOldToad.addPotion('Зелье силы'));
 
 // Модуль 3. Задача№39.
+// Дополни метод removePotion(potionName) так, чтобы он удалял 
+// зелье potionName из массива зелий в свойстве potions.
+
 // const atTheOldToad = {
 //   potions: ["Зелье скорости", "Дыхание дракона", "Каменная кожа"],
 //   removePotion(potionName) {
@@ -880,6 +924,10 @@
 
 
 // Модуль 3. Задача№40.
+// Дополни метод updatePotionName(oldName, newName) так, 
+// чтобы он обновлял название зелья с oldName на newName, 
+// в массиве зелий в свойстве potions.
+
 // const atTheOldToad = {
 //   potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
 //   updatePotionName(oldName, newName) {
@@ -908,9 +956,7 @@
 // Значение свойства atTheOldToad.getPotions это метод объекта.
 // Вызов метода atTheOldToad.getPotions() для исходного объекта возвращает [ { name: 'Зелье скорости', price: 460 }, { name: 'Дыхание дракона', price: 780 }, { name: 'Каменная кожа', price: 520 } ].
 // Значение свойства atTheOldToad.addPotion это метод объекта.
-
 // Для исходного объекта после вызова метода atTheOldToad.addPotion({ name: 'Невидимка', price: 620 }), в массиве potions последним элементом будет этот объект.
-
 // Для исходного объекта после вызова метода atTheOldToad.addPotion({ name: 'Зелье силы', price: 270 }), в массиве potions последним элементом будет этот объект.
 // Значение свойства atTheOldToad.removePotion это метод объекта.
 // Для исходного объекта после вызова метода atTheOldToad.removePotion('Дыхание дракона'), в свойстве potions будет массив [ { name: 'Зелье скорости', price: 460 }, { name: 'Каменная кожа', price: 520 } ].
